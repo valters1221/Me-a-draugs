@@ -1,0 +1,102 @@
+RewriteEngine On
+Options -MultiViews
+
+# Ensure using UTF-8 encoding
+AddDefaultCharset utf-8
+
+# Handle HTTPS redirection
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+# Enable HTTP Strict Transport Security (HSTS)
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# Redirect URLs with ?lang= to clean URLs
+RewriteCond %{QUERY_STRING} ^lang=(en|lv)
+RewriteRule ^(.*)$ /%1/$1? [R=301,L]
+
+# Handle root language URLs (like /en or /lv)
+RewriteRule ^(en|lv)/?$ index.php [QSA,L]
+
+# Handle language prefix with subdirectories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(en|lv)/(.+)$ $2.php [QSA,L]
+
+# Remove trailing slashes if not directory
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Remove .php extension from direct access
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Handle extensionless URLs for .php files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L,QSA]
+
+# If file doesn't exist, forward to 404.php
+# Custom error handling for 404
+ErrorDocument 404 /index
+
+# Prevent directory listings
+Options -Indexes
+
+# Protect against sensitive file access
+<FilesMatch "^(\.htaccess|\.htpasswd|\.git|\.env|config\.php|private/.*|\.(bak|config|sql|db|ini))$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Block access to hidden files and directories
+<IfModule mod_rewrite.c>
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# Protect against common vulnerabilities
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule .* index.php [F,L]
+</IfModule>
+
+# Set security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Content Security Policy - adjusted to allow external resources
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com *; img-src 'self' data: *; font-src 'self' https://cdnjs.cloudflare.com *; connect-src 'self' ws://127.0.0.1:5500 wss://127.0.0.1:5500 *; frame-ancestors 'self'; form-action 'self'; base-uri 'self'; object-src 'none'"
+    
+    # Permissions Policy
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+    
+    # Cache Control for HTML and PHP files
+    <FilesMatch "\.(html|htm|php)$">
+        Header set Cache-Control "private, no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+    
+    # Cache Control for static assets
+    <FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|eot)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+</IfModule>
+
+# PHP security settings
+<IfModule mod_php7.c>
+    php_flag display_errors Off
+    php_flag expose_php Off
+    php_flag allow_url_fopen Off
+    php_flag allow_url_include Off
+</IfModule>
