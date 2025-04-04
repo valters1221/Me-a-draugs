@@ -1,3 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Helvetica Font Face Declarations */
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/Helvetica/Helvetica.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/Helvetica/Helvetica-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/Helvetica/Helvetica-Oblique.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/Helvetica/Helvetica-BoldOblique.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@layer base {
+  html {
+    font-family: "Helvetica", ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+/* 
+
+theme colors from dark to light:
+
+#37432B
+#51603F
+#B7C784
+#CFE0AF
+
+
+*/
+
+@layer utilities {
+  .width-svg {
+    @media (min-width: 1400px) {
+      width: 150vw;
+    }
+    @media (min-width: 1000px) {
+      width: 130vw;
+    }
+  }
+  .top-svg {
+    @media (min-width: 1000px) {
+      top: -60%;
+    }
+  }
+}
