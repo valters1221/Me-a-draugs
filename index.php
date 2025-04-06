@@ -7,30 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meža Draugas</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/animastions.css">
+    <script src="js/animantion.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        media="print" onload="this.media='all'" crossorigin>
 </head>
 
-<body class="bg-black ">
+<body class="bg-black">
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/header.php'; ?>
-    <main class="relative overflow-hidden bg-green-md rounded-t-[30px] mt-1 -z-30">
+    <main class="relative overflow-hidden bg-green-md rounded-t-[30px] mt-2 z-10">
 
         <section class="flex justify-center items-center relative h-fit py-52">
             <img src="/images/lines.svg" alt="background lines meža draugs"
                 class="absolute width-svg min-[1000px]:h-[250vh] h-[1937px] w-[1924px] top-svg  top-[-50%] -translate-y-[40%] max-w-none">
-            <div class="max-w-[1400px] w-full lg:px-10 px-5 z-20 relative">
+            <div class="max-w-[1400px] w-full lg:px-10 px-5 z-20 relative animation-group">
                 <h1
-                    class="text-green-lier text-7xl min-[365px]:text-8xl lg:text-[10vw] font-bold lg:leading-tight lg:mb-0 mb-5 leading-[80px]">
-                    Meža
-                    Draugs
+                    class="title-animate text-green-lier text-7xl min-[365px]:text-8xl lg:text-[10vw] font-bold lg:leading-tight lg:mb-0 mb-5 leading-[80px]">
+                    <span class="w1">Meža</span>
+                    <span class="w2">Draugs</span>
                 </h1>
-                <p class="text-zinc-200 text-base lg:text-lg max-w-[700px] mb-8  ">
+                <p
+                    class="text-zinc-200 text-base lg:text-lg max-w-[700px] mb-8 animate blur-in fast-[0.2] delays-[0.4] group-trigger">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut ipsum maximus. Etiam magna in,
                     suscipit massa. Nam in velit molestie turpis a pharetra mattis. Suspendisse bibendum lobortis.
                 </p>
                 <div class="flex items-center gap-4">
                     <a href="#"
-                        class="bg-green-dark font-semibold text-lg text-zinc-100 px-6 py-3 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100">Sazinies
+                        class="bg-green-dark font-semibold text-lg text-zinc-100 px-6 py-3 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 animate blur-in fast-[0.2] delays-[0.45] group-trigger">Sazinies
                         ar mums</a>
-                    <button class="bg-zinc-200 p-2 rounded-xl">
+                    <button class="bg-zinc-200 p-2 rounded-xl animate blur-in fast-[0.2] delays-[0.5] group-trigger">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-black text-lg" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -45,8 +51,10 @@
             <div class="max-w-[1500px] w-full lg:px-10 px-5 z-20 relative">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2 ">
-                        <h1 class="text-white text-[20vw] sm:text-7xl leading-[95px] font-bold mb-3">Kas mēs esam!</h1>
-                        <p class="text-zinc-200 text-base md:max-w-[90%]">
+                        <h1
+                            class="text-white text-[20vw] sm:text-7xl leading-[95px] font-bold mb-3 animate reveal-down fast-[0.7]  ">
+                            Kas mēs esam!</h1>
+                        <p class="text-zinc-200 text-base md:max-w-[90%] animate blur-in fast-[0.2] delays-[0.3]">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ad eum obcaecati minima
                             ipsa illo beatae labore cum voluptate maiores, a magni sint repellendus dicta quidem, libero
                             molestiae veniam aperiam explicabo placeat optio fugit consequatur odit. Neque, iure,
@@ -68,19 +76,21 @@
             <div class="max-w-[1500px] w-full lg:px-10 px-5 z-20 relative">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2 flex justify-center items-center order-2 md:order-1">
-                        <video src="images/mairis-briedis.mp4" autoplay loop muted
+                        <video src="images/mairis-briedis.mp4" autoplay loop muted controls
                             class="h-[50%] max-h-[600px] rounded-[30px] border-[10px] border-zinc-800">
                         </video>
                     </div>
                     <div class="md:w-1/2 flex flex-col order-1 md:order-2">
-                        <h1 class="text-white text-[20vw] sm:text-8xl leading-[80px] font-bold mb-3">Seko Mums...</h1>
-                        <p class="text-zinc-200 text-base mb-8">
+                        <h1
+                            class="text-white text-[20vw] sm:text-8xl leading-[80px] font-bold mb-3 animate reveal-down fast-[0.7] ">
+                            Seko Mums...</h1>
+                        <p class="text-zinc-200 text-base mb-8 animate blur-in fast-[0.2] delays-[0.3]">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ad eum obcaecati ad eum
                             obcaecati
                         </p>
-                        <div class="flex flex-col gap-4 w-full">
-                            <a href="#"
-                                class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full">
+                        <div class="flex flex-col gap-4 w-full animation-group">
+                            <a href="# "
+                                class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full animate blur-in fast-[0.2] delays-[0.4] group-trigger">
                                 <div class="flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 24 24"
                                         fill="currentColor">
@@ -98,7 +108,7 @@
                                 </div>
                             </a>
                             <a href="#"
-                                class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full">
+                                class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full animate blur-in fast-[0.2] delays-[0.45] group-trigger">
                                 <div class="flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 24 24"
                                         fill="currentColor">
@@ -116,7 +126,7 @@
                                 </div>
                             </a>
                             <a href="#"
-                                class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full">
+                                class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full animate blur-in fast-[0.2] delays-[0.5] group-trigger">
                                 <div class="flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 24 24"
                                         fill="currentColor">
@@ -134,7 +144,7 @@
                                 </div>
                             </a>
                             <a href="#"
-                                class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full">
+                                class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full animate blur-in fast-[0.2] delays-[0.55] group-trigger">
                                 <div class="flex items-center gap-2">
                                     <img src="images/tiktok.svg" alt="tiktok" class="w-6 h-6 mr-2">
                                     TikTok
@@ -172,16 +182,18 @@
                                 <span class="text-white md:text-zinc-200 md:text-5xl text-4xl">Lorom ispisum?</span>
                             </div>
                             <div class="bg-white rounded-xl p-3 w-12 h-12 flex items-center justify-center">
-                                <svg class="arrow w-6 h-6 rotate-45" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                    stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="arrow w-6 h-6 transition-transform duration-300"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
                                     <polyline points="12 5 19 12 12 19"></polyline>
                                 </svg>
                             </div>
                         </div>
-                        <div class="faq-answer text-white text-xl">
-
+                        <div class="faq-answer text-white text-xl mt-4 md:pl-24">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
                     <hr class="border-zinc-200 rounded-full">
@@ -192,16 +204,18 @@
                                 <span class="text-white md:text-zinc-200 md:text-5xl text-4xl">Lorom ispisum?</span>
                             </div>
                             <div class="bg-white rounded-xl p-3 w-12 h-12 flex items-center justify-center">
-                                <svg class="arrow w-6 h-6 rotate-45" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                    stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="arrow w-6 h-6 transition-transform duration-300"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
                                     <polyline points="12 5 19 12 12 19"></polyline>
                                 </svg>
                             </div>
                         </div>
-                        <div class="faq-answer text-white text-xl">
-
+                        <div class="faq-answer text-white text-xl mt-4 md:pl-24">
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                commodo consequat.</p>
                         </div>
                     </div>
                     <hr class="border-zinc-200 rounded-full">
@@ -213,16 +227,18 @@
                                     ispisum?</span>
                             </div>
                             <div class="bg-white rounded-xl p-3 w-12 h-12 flex items-center justify-center">
-                                <svg class="arrow w-6 h-6 rotate-45" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                    stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="arrow w-6 h-6 transition-transform duration-300"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
                                     <polyline points="12 5 19 12 12 19"></polyline>
                                 </svg>
                             </div>
                         </div>
-                        <div class="faq-answer text-white text-xl">
-
+                        <div class="faq-answer text-white text-xl mt-4 md:pl-24">
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur.</p>
                         </div>
                     </div>
                     <hr class="border-zinc-200 rounded-full">
@@ -233,16 +249,18 @@
                                 <span class="text-white md:text-zinc-200 md:text-5xl text-4xl">Lorom ispisum?</span>
                             </div>
                             <div class="bg-white rounded-xl p-3 w-12 h-12 flex items-center justify-center">
-                                <svg class="arrow w-6 h-6 rotate-45" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                    stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="arrow w-6 h-6 transition-transform duration-300"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
                                     <polyline points="12 5 19 12 12 19"></polyline>
                                 </svg>
                             </div>
                         </div>
-                        <div class="faq-answer text-white text-xl">
-
+                        <div class="faq-answer text-white text-xl mt-4 md:pl-24">
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                                anim id est laborum.</p>
                         </div>
                     </div>
                     <hr class="border-zinc-200 rounded-full">
@@ -251,6 +269,7 @@
         </section>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/contact-form.php'; ?>
     </main>
+
 </body>
 
 </html>

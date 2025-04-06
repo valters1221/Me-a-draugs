@@ -2,7 +2,8 @@
     <div class="container max-w-[1400px] mx-auto grid md:grid-cols-2 gap-12 items-center ">
         <!-- Left Section -->
         <div class="text-white space-y-8 animation-group">
-            <h1 class="text-7xl text-green-lier font-bold mb-4 flex flex-col animate fast-[0.7] blur-in group-trigger ">
+            <h1
+                class="min-[399px]:text-7xl text-6xl text-green-lier font-bold mb-4 flex flex-col animate fast-[0.7] blur-in group-trigger ">
                 <span class="whitespace-nowrap">Saznies ar</span>
                 <span class="">mums!</span>
             </h1>
@@ -13,39 +14,15 @@
             <div class="space-y-4 ">
                 <div class="flex items-center gap-4 animate fast-[1] reveal-up group-trigger">
                     <div class="bg-green-lier p-2 rounded-lg">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone text-black"></i>
                     </div>
                     <span>+123 456 7890</span>
                 </div>
                 <div class="flex items-center gap-4 animate fast-[1] delays-[0.05] reveal-up group-trigger">
                     <div class="bg-green-lier p-2 rounded-lg">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope text-black"></i>
                     </div>
                     <span>LoremIpsum@ipsum.com</span>
-                </div>
-            </div>
-
-            <div class="space-y-4 animate fast-[0.7] blur-in group-trigger">
-                <h3 class="text-lg font-semibold">Dolor Sit Amet</h3>
-                <div class="flex gap-3">
-                    <a href="#" class="social-icon w-10 h-10 rounded-lg flex items-center justify-center">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-icon w-10 h-10 rounded-lg flex items-center justify-center">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-icon w-10 h-10 rounded-lg flex items-center justify-center">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-icon w-10 h-10 rounded-lg flex items-center justify-center">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="social-icon w-10 h-10 rounded-lg flex items-center justify-center">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="#" class="social-icon w-10 h-10 rounded-lg flex items-center justify-center">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
                 </div>
             </div>
         </div>

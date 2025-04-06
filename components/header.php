@@ -1,20 +1,5 @@
-<!-- A completely empty div to hack the structure -->
-<div class="header-hack">
-    <div class="max-w-[1200px] mx-auto w-full px-4">
-        <div class="flex justify-between items-center py-6 pointer-events-none opacity-0">
-            <!-- Invisible placeholders to maintain structure -->
-            <div class="flex items-center">
-                <div class="w-14 h-14"></div>
-            </div>
-            <div class="flex items-center">
-                <div class="w-6 h-6"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Actual visible elements positioned to appear on the green background -->
-<div class="absolute top-[10px] left-0 right-0 z-40">
+<div class="absolute top-[20px] left-0 right-0 z-50">
     <div class="max-w-[1200px] mx-auto w-full px-4">
         <div class="flex justify-between items-center">
             <!-- Logo -->
@@ -27,13 +12,13 @@
             </div>
             <!-- Hamburger Button -->
             <div class="flex items-center">
-                <button class="text-white menu-toggle-btn relative w-14 h-14 flex justify-center items-center">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                <button class="text-white menu-toggle-btn relative w-16 h-16 flex justify-center items-center">
+                    <svg width="" height="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                         class="hamburger-icon absolute inset-0 m-auto">
                         <path d="M4 6H20M4 12H20M4 18H20" stroke="white" stroke-width="3" stroke-linecap="round"
                             stroke-linejoin="round" />
                     </svg>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    <svg width="" height="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                         class="close-icon absolute inset-0 m-auto opacity-0">
                         <path d="M18 6L6 18M6 6L18 18" stroke="#EF4444" stroke-width="3" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -48,20 +33,27 @@
 <div class="menu-content overflow-hidden text-white absolute left-0 right-0 z-30">
     <!-- Menu content wrapper with overflow to hide text until animation completes -->
     <div class="menu-content-wrapper overflow-hidden">
-        <div class="max-w-[1200px] mx-auto w-full px-4 py-12">
+        <div class="max-w-[1200px] mx-auto w-full px-4 pt-[9.5rem] pb-16">
             <div
                 class="md:grid md:grid-cols-2 md:grid-rows-2 md:gap-12 gap-y-10 flex flex-col justify-evenly menu-items-container">
                 <div class="flex items-center menu-item">
-                    <h2 class="text-4xl md:text-5xl font-normal md:pl-16 pl-8">Our Work</h2>
+                    <a href="/work"
+                        class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">Our
+                        Work</a>
                 </div>
                 <div class="flex items-center menu-item">
-                    <h2 class="text-4xl md:text-5xl font-normal md:pl-16 pl-8">About Us</h2>
+                    <a href="/about"
+                        class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">About
+                        Us</a>
                 </div>
                 <div class="flex items-center menu-item">
-                    <h2 class="text-4xl md:text-5xl font-normal md:pl-16 pl-8">Our Process</h2>
+                    <a href="/process"
+                        class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">Our
+                        Process</a>
                 </div>
-                <div class="flex items-center menu-item">
-                    <h2 class="text-4xl md:text-5xl font-normal md:pl-16 pl-8">Blog</h2>
+                <div class="flex items-center menu-item ">
+                    <a href="/blog"
+                        class="text-4xl md:text-5xl md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">Blog</a>
                 </div>
             </div>
         </div>
@@ -69,11 +61,7 @@
 </div>
 
 <style>
-/* Hide black area and position main content */
 main {
-    position: relative;
-    z-index: 20;
-    transform: translateY(-100px);
     will-change: transform;
     transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -120,7 +108,6 @@ body.menu-open .close-icon {
     opacity: 0;
     overflow: hidden;
     transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
-    background-color: black;
 }
 
 /* Position menu items and stagger their reveal */
@@ -163,7 +150,7 @@ body.menu-open .menu-item:nth-child(4) {
 
 body.menu-open .menu-content {
     height: auto;
-    max-height: 400px;
+    max-height: 500px;
     opacity: 1;
 }
 

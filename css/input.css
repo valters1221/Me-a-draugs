@@ -64,3 +64,25 @@ theme colors from dark to light:
     }
   }
 }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
+    padding 0.3s ease-out;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.faq-open {
+  max-height: 500px;
+  /* Adjust based on your content */
+  opacity: 1;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.arrow {
+  transition: transform 0.3s ease-out;
+}
