@@ -51,10 +51,9 @@
             <div class="max-w-[1500px] w-full lg:px-10 px-5 z-20 relative">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2 ">
-                        <h1
-                            class="text-white text-[20vw] sm:text-7xl leading-[95px] font-bold mb-3 animate reveal-down fast-[0.7]  ">
-                            Par mums</h1>
-                        <p class="text-zinc-200 text-base md:max-w-[90%] animate blur-in fast-[0.2] delays-[0.3]">
+                        <h1 class="text-white text-[20vw] sm:text-7xl leading-[95px] font-bold mb-3 reveal-down">
+                            Par mums</h1>
+                        <p class="text-zinc-200 text-base md:max-w-[90%] blur-in" style="">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ad eum obcaecati minima
                             ipsa illo beatae labore cum voluptate maiores, a magni sint repellendus dicta quidem, libero
                             molestiae veniam aperiam explicabo placeat optio fugit consequatur odit. Neque, iure,
@@ -62,11 +61,10 @@
                         </p>
                     </div>
                     <div class="md:w-1/2 flex justify-center items-center">
-                        <div
-                            class="w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-green-li shadow-lg shadow-green-lier/50 rounded-full relative mt-10 sm:mt-0">
-                            <img src="/images/tree.png" alt="tree meža draugs"
-                                class="absolute -top-16 -left-10 sm:-left-16 w-full h-full object-cover">
-                        </div>
+                        <img src="/images/logo.png" alt="logo meža draugs"
+                            class="w-[320px] h-[320px] sm:w-[500px] sm:h-[500px]  relative ">
+
+                        </>
                     </div>
                 </div>
             </div>

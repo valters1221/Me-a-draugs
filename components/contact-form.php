@@ -58,7 +58,7 @@
                     <div class="text-right">
                         <button type="submit"
                             class="bg-[#d8e8a2] hover:bg-[#c9db89] text-gray-800 font-medium py-2 px-6 rounded-md transition">
-                            Submit
+                            Sūtīt
                         </button>
                     </div>
                 </form>
