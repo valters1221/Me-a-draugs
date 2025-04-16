@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meža Draugas</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/script.js"></script>
+    <link rel="stylesheet" href="/css/style.css?v=1.0.3">
+    <script src="/js/script.js?v=1.0.3"></script>
     <link rel="stylesheet" href="/css/animastions.css">
     <script src="/js/animantion.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -29,8 +29,8 @@
                 </h1>
                 <p
                     class="text-zinc-200 text-base lg:text-lg max-w-[700px] mb-8 animate blur-in fast-[0.2] delays-[0.4] group-trigger">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut ipsum maximus. Etiam magna in,
-                    suscipit massa. Nam in velit molestie turpis a pharetra mattis. Suspendisse bibendum lobortis.
+                    Meža Draugs ir ikviens, kurš tic, ka gudra un ilgtspējīga mežsaimniecība nodrošina pārticību un
+                    drošību Latvijai, vienlaikus ļaujot dabai elpot un zelt.
                 </p>
                 <div class="flex items-center gap-4">
                     <a href="/<?php echo $lang->getCurrentLang(); ?>/index#Saznies-ar-mums"
@@ -51,7 +51,7 @@
             <div class="max-w-[1500px] w-full lg:px-10 px-5 z-20 relative">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2 ">
-                        <h1 class="text-white text-[20vw] sm:text-7xl leading-[95px] font-bold mb-3 reveal-down">
+                        <h1 class="text-white text-[15vw] sm:text-7xl leading-[95px] font-bold reveal-down">
                             Par mums</h1>
                         <p class="text-zinc-200 text-base md:max-w-[90%] blur-in" style="">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ad eum obcaecati minima
@@ -61,31 +61,40 @@
                         </p>
                     </div>
                     <div class="md:w-1/2 flex justify-center items-center">
-                        <img src="/images/logo.png" alt="logo meža draugs"
-                            class="w-[320px] h-[320px] sm:w-[500px] sm:h-[500px]  relative ">
+                        <img src="/images/Meza-draugs.svg" alt="logo meža draugs"
+                            class="w-[320px] h-[320px] sm:max-w-[500px] sm:max-h-[500px] sm:w-full relative ">
                     </div>
                 </div>
             </div>
         </section>
 
+
+
         <section class="flex justify-center items-center mt-20" id="Seko-Mums">
             <div class="max-w-[1500px] w-full lg:px-10 px-5 z-20 relative">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2 flex justify-center items-center order-2 md:order-1">
-                        <video src="/images/mairis-briedis.mp4" autoplay loop muted controls
-                            class="h-[50%] max-h-[600px] rounded-[30px] border-[17px] border-zinc-800">
-                        </video>
+                        <div class="relative" style="width:320px; height:600px;">
+                            <img src="/images/phone1.svg"
+                                class="absolute top-0 left-0 w-full h-full z-10 pointer-events-none" alt="Phone frame">
+                            <div class="absolute"
+                                style="top:22px; left:22px; right:22px; bottom:22px; border-radius:26px; overflow:hidden; z-index:1;">
+                                <video src="/images/Untitled-design(1).mp4" autoplay loop muted controls
+                                    class="w-full h-full object-cover">
+                                </video>
+                            </div>
+                        </div>
                     </div>
                     <div class="md:w-1/2 flex flex-col order-1 md:order-2">
                         <h1
                             class="text-white text-[20vw] sm:text-8xl leading-[80px] font-bold mb-3 animate reveal-down fast-[0.7] ">
-                            Seko Mums!</h1>
+                            Seko mums!</h1>
                         <p class="text-zinc-200 text-base mb-8 animate blur-in fast-[0.2] delays-[0.3]">
                             Latvijas mežs nav stāsts tikai par kokiem – tas ir stāsts arī par mums. Seko un iepazīsti
                             meža nozari tuvāk!
                         </p>
                         <div class="flex flex-col gap-4 w-full animation-group">
-                            <a href="# "
+                            <a href="https://www.instagram.com/mezadraugs/"
                                 class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full animate blur-in fast-[0.2] delays-[0.4] group-trigger">
                                 <div class="flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 24 24"
@@ -103,7 +112,7 @@
                                     </svg>
                                 </div>
                             </a>
-                            <a href="#"
+                            <a href="https://www.youtube.com/@mezadraugs"
                                 class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full animate blur-in fast-[0.2] delays-[0.45] group-trigger">
                                 <div class="flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 24 24"
@@ -139,11 +148,29 @@
                                     </svg>
                                 </div>
                             </a>
-                            <a href="#"
+                            <a href="https://www.tiktok.com/@mezadraugs"
                                 class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full animate blur-in fast-[0.2] delays-[0.55] group-trigger">
                                 <div class="flex items-center gap-2">
                                     <img src="/images/tiktok.svg" alt="tiktok" class="w-6 h-6 mr-2">
                                     TikTok
+                                </div>
+                                <div class="bg-zinc-200 rounded-lg p-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 -rotate-45" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full animate blur-in fast-[0.2] delays-[0.55] group-trigger">
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                    </svg>
+                                    X
                                 </div>
                                 <div class="bg-zinc-200 rounded-lg p-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 -rotate-45" fill="none"

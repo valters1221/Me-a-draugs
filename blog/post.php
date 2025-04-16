@@ -59,8 +59,8 @@ $related_posts = $related_stmt->get_result();
     <title></title>
     <meta name="description" content="">
 
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/script.js"></script>
+    <link rel="stylesheet" href="/css/style.css?v=1.0.3">
+    <script src="/js/script.js?v=1.0.3"></script>
     <link rel="stylesheet" href="/css/animastions.css">
     <script src="/js/animantion.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">

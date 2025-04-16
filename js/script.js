@@ -110,9 +110,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Track if we're navigating internally
   let isInternalNavigation = false;
+  let isTransitioning = false;
 
   // Function to trigger page transition
   function triggerPageTransition(url) {
+    // Prevent multiple transitions at once
+    if (isTransitioning) return;
+    isTransitioning = true;
+
     // Set flag to indicate internal navigation
     isInternalNavigation = true;
 
@@ -148,6 +153,15 @@ document.addEventListener("DOMContentLoaded", function () {
       !link.hasAttribute("download") &&
       link.getAttribute("target") !== "_blank"
     ) {
+      const currentUrlWithoutHash = window.location.href.split("#")[0];
+      const targetUrlWithoutHash = link.href.split("#")[0];
+
+      // Only handle hash changes differently if on the same base page
+      if (currentUrlWithoutHash === targetUrlWithoutHash) {
+        // Let the browser handle same-page hash navigation normally
+        return;
+      }
+
       // Prevent default navigation
       e.preventDefault();
 
@@ -160,31 +174,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Handle the incoming page (page reveal)
-  const cameFromInternalNavigation =
-    sessionStorage.getItem("internalNavigation") === "true";
+  window.addEventListener("load", function () {
+    const cameFromInternalNavigation =
+      sessionStorage.getItem("internalNavigation") === "true";
 
-  // Clear the flag immediately
-  sessionStorage.removeItem("internalNavigation");
+    // Clear the flag immediately
+    sessionStorage.removeItem("internalNavigation");
 
-  // Only show the reveal animation if we came from internal navigation
-  if (cameFromInternalNavigation) {
-    // Ensure no transition initially
-    overlay.style.transition = "none";
-    overlay.style.transform = "translateY(0)";
+    if (cameFromInternalNavigation) {
+      // Ensure overlay is visible initially
+      overlay.style.transition = "none";
+      overlay.style.transform = "translateY(0)";
 
-    // Force reflow to ensure the initial state is applied
-    overlay.offsetHeight;
+      // Force reflow
+      overlay.offsetHeight;
 
-    // Reveal the page by sliding overlay back up with a smoother curve
-    setTimeout(() => {
-      overlay.style.transition = "transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)";
+      // Add a guaranteed delay before starting the reveal animation
+      setTimeout(() => {
+        overlay.style.transition =
+          "transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)";
+        overlay.style.transform = "translateY(-100%)";
+
+        // Reset transition flag after animation completes
+        setTimeout(() => {
+          isTransitioning = false;
+        }, 1200);
+      }, 500);
+    } else {
+      // For direct navigation, ensure overlay is hidden
+      overlay.style.transition = "none";
       overlay.style.transform = "translateY(-100%)";
-    }, 300); // Slight delay before starting the reveal animation
-  } else {
-    // Make sure overlay is hidden for direct navigation or back/forward
-    overlay.style.transition = "none";
-    overlay.style.transform = "translateY(-100%)";
-  }
+      isTransitioning = false;
+    }
+  });
 
   // Fix for browser back/forward navigation
   window.addEventListener("pageshow", function (event) {
@@ -193,9 +215,23 @@ document.addEventListener("DOMContentLoaded", function () {
       // Immediately hide the overlay without animation
       overlay.style.transition = "none";
       overlay.style.transform = "translateY(-100%)";
-
-      // Force reflow
-      overlay.offsetHeight;
+      isTransitioning = false;
     }
   });
+
+  // Fallback to ensure overlay is eventually removed if something goes wrong
+  setTimeout(() => {
+    if (overlay.style.transform !== "translateY(-100%)") {
+      overlay.style.transition = "transform 0.5s ease-out";
+      overlay.style.transform = "translateY(-100%)";
+      isTransitioning = false;
+    }
+  }, 3000);
+
+  // Additional fallback to reset transition state
+  setInterval(() => {
+    if (overlay.style.transform === "translateY(-100%)") {
+      isTransitioning = false;
+    }
+  }, 1000);
 });

@@ -715,12 +715,8 @@ html {
   top: 50%;
 }
 
-.-left-10 {
-  left: -2.5rem;
-}
-
-.-top-16 {
-  top: -4rem;
+.top-0 {
+  top: 0px;
 }
 
 .isolate {
@@ -1058,8 +1054,8 @@ html {
   height: 1937px;
 }
 
-.h-\[300px\] {
-  height: 300px;
+.h-\[320px\] {
+  height: 320px;
 }
 
 .h-\[50\%\] {
@@ -1075,12 +1071,12 @@ html {
   height: fit-content;
 }
 
-.h-full {
-  height: 100%;
+.h-\[600px\] {
+  height: 600px;
 }
 
-.h-\[320px\] {
-  height: 320px;
+.h-full {
+  height: 100%;
 }
 
 .max-h-\[600px\] {
@@ -1131,8 +1127,8 @@ html {
   width: 200vw;
 }
 
-.w-\[300px\] {
-  width: 300px;
+.w-\[320px\] {
+  width: 320px;
 }
 
 .w-\[this-is\\\\\] {
@@ -1154,10 +1150,6 @@ html {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[320px\] {
-  width: 320px;
 }
 
 .min-w-full {
@@ -1206,6 +1198,10 @@ html {
 
 .max-w-screen-xl {
   max-width: 1280px;
+}
+
+.max-w-\[320px\] {
+  max-width: 320px;
 }
 
 .flex-1 {
@@ -2167,6 +2163,10 @@ html {
   border-radius: 0.75rem;
 }
 
+.rounded-\[25px\] {
+  border-radius: 25px;
+}
+
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
@@ -2545,6 +2545,10 @@ html {
   padding: 1.5rem;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -2764,6 +2768,10 @@ html {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[15vw\] {
+  font-size: 15vw;
 }
 
 .font-bold {
@@ -3190,11 +3198,6 @@ html {
 
 .shadow-black {
   --tw-shadow-color: #000;
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
-.shadow-green-lier\/50 {
-  --tw-shadow-color: rgb(207 224 175 / 0.5);
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -3691,10 +3694,6 @@ theme colors from dark to light:
 }
 
 @media (min-width: 640px) {
-  .sm\:-left-16 {
-    left: -4rem;
-  }
-
   .sm\:mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -3704,20 +3703,44 @@ theme colors from dark to light:
     margin-bottom: 0px;
   }
 
-  .sm\:mt-0 {
-    margin-top: 0px;
-  }
-
   .sm\:flex {
     display: flex;
+  }
+
+  .sm\:h-\[700px\] {
+    height: 700px;
   }
 
   .sm\:h-\[500px\] {
     height: 500px;
   }
 
+  .sm\:max-h-\[500px\] {
+    max-height: 500px;
+  }
+
+  .sm\:max-h-\[600px\] {
+    max-height: 600px;
+  }
+
+  .sm\:w-\[700px\] {
+    width: 700px;
+  }
+
   .sm\:w-\[500px\] {
     width: 500px;
+  }
+
+  .sm\:w-full {
+    width: 100%;
+  }
+
+  .sm\:max-w-\[500px\] {
+    max-width: 500px;
+  }
+
+  .sm\:max-w-\[600px\] {
+    max-width: 600px;
   }
 
   .sm\:grid-cols-2 {

@@ -66,7 +66,7 @@ $total_pages = ceil($total_posts / $posts_per_page);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meža Draugas</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.0.3">
     <script src="/js/script.js"></script>
     <link rel="stylesheet" href="/css/animastions.css">
     <script src="/js/animantion.js"></script>
