@@ -1,4 +1,4 @@
-<section class="flex items-center justify-center p-4 mt-10">
+<section class="flex items-center justify-center p-4 mt-10" id="Saznies-ar-mums">
     <div class="container max-w-[1400px] mx-auto grid md:grid-cols-2 gap-12 items-center ">
         <!-- Left Section -->
         <div class="text-white space-y-8 animation-group">
@@ -8,8 +8,7 @@
                 <span class="">mums!</span>
             </h1>
             <p class="text-gray-200 mb-8 animate fast-[0.7] delays-[0.05] blur-in group-trigger">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu
-                sed erat molestie vehicula.</p>
+                Mēs labprāt uzklausītu Tavu viedokli, jautājumus vai idejas.</p>
 
             <div class="space-y-4 ">
                 <div class="flex items-center gap-4 animate fast-[1] reveal-up group-trigger">

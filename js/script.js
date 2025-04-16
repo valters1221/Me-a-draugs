@@ -90,3 +90,112 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Create the page transition overlay element
+  const overlay = document.createElement("div");
+  overlay.className = "page-transition-overlay";
+  overlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #B7C784;
+    z-index: 9999;
+    transform: translateY(-100%);
+    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  `;
+  document.body.appendChild(overlay);
+
+  // Track if we're navigating internally
+  let isInternalNavigation = false;
+
+  // Function to trigger page transition
+  function triggerPageTransition(url) {
+    // Set flag to indicate internal navigation
+    isInternalNavigation = true;
+
+    // Store this in sessionStorage so the next page knows we came from internal navigation
+    sessionStorage.setItem("internalNavigation", "true");
+
+    // Disable any ongoing transitions to ensure smooth animation
+    overlay.style.transition = "none";
+    // Force reflow
+    overlay.offsetHeight;
+    // Re-enable transition with a smoother curve
+    overlay.style.transition = "transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)";
+    // Show overlay sliding from top to bottom
+    overlay.style.transform = "translateY(0)";
+
+    // After animation completes, navigate to the new page
+    // Wait for animation to fully complete before navigating
+    setTimeout(() => {
+      window.location.href = url;
+    }, 1200); // Increased to match the new transition duration
+  }
+
+  // Handle all link clicks for internal navigation
+  document.addEventListener("click", function (e) {
+    // Find closest anchor tag if the click was on a child element
+    const link = e.target.closest("a");
+
+    // Check if it's a link and it's internal (same origin)
+    if (
+      link &&
+      link.href &&
+      link.hostname === window.location.hostname &&
+      !link.hasAttribute("download") &&
+      link.getAttribute("target") !== "_blank"
+    ) {
+      // Prevent default navigation
+      e.preventDefault();
+
+      // Get the URL to navigate to
+      const url = link.href;
+
+      // Trigger the transition
+      triggerPageTransition(url);
+    }
+  });
+
+  // Handle the incoming page (page reveal)
+  const cameFromInternalNavigation =
+    sessionStorage.getItem("internalNavigation") === "true";
+
+  // Clear the flag immediately
+  sessionStorage.removeItem("internalNavigation");
+
+  // Only show the reveal animation if we came from internal navigation
+  if (cameFromInternalNavigation) {
+    // Ensure no transition initially
+    overlay.style.transition = "none";
+    overlay.style.transform = "translateY(0)";
+
+    // Force reflow to ensure the initial state is applied
+    overlay.offsetHeight;
+
+    // Reveal the page by sliding overlay back up with a smoother curve
+    setTimeout(() => {
+      overlay.style.transition = "transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)";
+      overlay.style.transform = "translateY(-100%)";
+    }, 300); // Slight delay before starting the reveal animation
+  } else {
+    // Make sure overlay is hidden for direct navigation or back/forward
+    overlay.style.transition = "none";
+    overlay.style.transform = "translateY(-100%)";
+  }
+
+  // Fix for browser back/forward navigation
+  window.addEventListener("pageshow", function (event) {
+    // If the page is loaded from the cache (back/forward navigation)
+    if (event.persisted) {
+      // Immediately hide the overlay without animation
+      overlay.style.transition = "none";
+      overlay.style.transform = "translateY(-100%)";
+
+      // Force reflow
+      overlay.offsetHeight;
+    }
+  });
+});

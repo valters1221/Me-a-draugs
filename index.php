@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meža Draugas</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
-    <link rel="stylesheet" href="css/animastions.css">
-    <script src="js/animantion.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
+    <link rel="stylesheet" href="/css/animastions.css">
+    <script src="/js/animantion.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         media="print" onload="this.media='all'" crossorigin>
 </head>
@@ -47,13 +47,13 @@
             </div>
         </section>
 
-        <section class="flex justify-center items-center ">
+        <section class="flex justify-center items-center " id="Par-Mums">
             <div class="max-w-[1500px] w-full lg:px-10 px-5 z-20 relative">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2 ">
                         <h1
                             class="text-white text-[20vw] sm:text-7xl leading-[95px] font-bold mb-3 animate reveal-down fast-[0.7]  ">
-                            Kas mēs esam!</h1>
+                            Par mums</h1>
                         <p class="text-zinc-200 text-base md:max-w-[90%] animate blur-in fast-[0.2] delays-[0.3]">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ad eum obcaecati minima
                             ipsa illo beatae labore cum voluptate maiores, a magni sint repellendus dicta quidem, libero
@@ -64,7 +64,7 @@
                     <div class="md:w-1/2 flex justify-center items-center">
                         <div
                             class="w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-green-li shadow-lg shadow-green-lier/50 rounded-full relative mt-10 sm:mt-0">
-                            <img src="images/tree.png" alt="tree meža draugs"
+                            <img src="/images/tree.png" alt="tree meža draugs"
                                 class="absolute -top-16 -left-10 sm:-left-16 w-full h-full object-cover">
                         </div>
                     </div>
@@ -72,21 +72,21 @@
             </div>
         </section>
 
-        <section class="flex justify-center items-center mt-20">
+        <section class="flex justify-center items-center mt-20" id="Seko-Mums">
             <div class="max-w-[1500px] w-full lg:px-10 px-5 z-20 relative">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2 flex justify-center items-center order-2 md:order-1">
-                        <video src="images/mairis-briedis.mp4" autoplay loop muted controls
-                            class="h-[50%] max-h-[600px] rounded-[30px] border-[10px] border-zinc-800">
+                        <video src="/images/mairis-briedis.mp4" autoplay loop muted controls
+                            class="h-[50%] max-h-[600px] rounded-[30px] border-[17px] border-zinc-800">
                         </video>
                     </div>
                     <div class="md:w-1/2 flex flex-col order-1 md:order-2">
                         <h1
                             class="text-white text-[20vw] sm:text-8xl leading-[80px] font-bold mb-3 animate reveal-down fast-[0.7] ">
-                            Seko Mums...</h1>
+                            Seko Mums!</h1>
                         <p class="text-zinc-200 text-base mb-8 animate blur-in fast-[0.2] delays-[0.3]">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ad eum obcaecati ad eum
-                            obcaecati
+                            Latvijas mežs nav stāsts tikai par kokiem – tas ir stāsts arī par mums. Seko un iepazīsti
+                            meža nozari tuvāk!
                         </p>
                         <div class="flex flex-col gap-4 w-full animation-group">
                             <a href="# "
@@ -146,7 +146,7 @@
                             <a href="#"
                                 class="bg-green-li px-7 py-4 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 text-green-dark font-semibold text-lg flex items-center justify-between max-w-[350px] w-full animate blur-in fast-[0.2] delays-[0.55] group-trigger">
                                 <div class="flex items-center gap-2">
-                                    <img src="images/tiktok.svg" alt="tiktok" class="w-6 h-6 mr-2">
+                                    <img src="/images/tiktok.svg" alt="tiktok" class="w-6 h-6 mr-2">
                                     TikTok
                                 </div>
                                 <div class="bg-zinc-200 rounded-lg p-2">
@@ -163,14 +163,14 @@
             </div>
         </section>
 
-        <section class="my-20 relative">
+        <section class="my-20 relative" id="BUJ">
             <img src="/images/lines.svg" alt="background lines meža draugs "
                 class="absolute lg:h-[1700px] lg:w-[100vw] h-[1000px] w-[200vw] -z-10 top-[-70%] lg:right-[-60vw] right-[-150vw]  max-w-none">
             <div class="faq-container container mx-auto px-4">
                 <h1
                     class="min-[1040px]:text-[6vw] text-4xl md:text-7xl font-bold text-white mb-16 min-[1040px]:leading-[110px] flex flex-col">
                     <div class="whitespace-nowrap">Viss biežāk uzdotie</div>
-                    <span class="text-green-li">jautājumi?</span>
+                    <span class="text-green-li">jautājumi</span>
                 </h1>
 
                 <div class="space-y-6">
@@ -268,7 +268,9 @@
             </div>
         </section>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/contact-form.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'; ?>
     </main>
+
 
 </body>
 

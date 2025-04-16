@@ -4,6 +4,14 @@ Options -MultiViews
 # Ensure using UTF-8 encoding
 AddDefaultCharset utf-8
 
+# Skip all rules for admin directory
+RewriteRule ^admin/ - [L]
+
+# Skip all rules for includes directory when accessed via AJAX
+RewriteCond %{HTTP:X-Requested-With} XMLHttpRequest [NC]
+RewriteRule ^includes/ - [L]
+
+
 # Handle HTTPS redirection
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]

@@ -4,19 +4,25 @@
         <div class="flex justify-between items-center">
             <!-- Logo -->
             <div class="flex items-center">
-                <div class="logo-container relative w-14 h-14">
+                <a href="/index" class="logo-container relative w-14 h-14">
                     <img src="/images/logo.png" alt="logo" class="w-14 h-14 logo-normal absolute inset-0">
                     <img src="/images/logo-white.png" alt="logo"
                         class="w-14 h-14 logo-white absolute inset-0 opacity-0">
-                </div>
+                </a>
             </div>
             <!-- Hamburger Button -->
             <div class="flex items-center">
-                <button class="text-white menu-toggle-btn relative w-16 h-16 flex justify-center items-center">
+                <?php 
+                $current_page = $_SERVER['REQUEST_URI'];
+                $button_class = (strpos($current_page, '/blog/post') !== false) ? 'text-black' : 'text-white';
+                ?>
+                <button
+                    class="<?php echo $button_class; ?> menu-toggle-btn relative w-16 h-16 flex justify-center items-center">
                     <svg width="" height="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                         class="hamburger-icon absolute inset-0 m-auto">
-                        <path d="M4 6H20M4 12H20M4 18H20" stroke="white" stroke-width="3" stroke-linecap="round"
-                            stroke-linejoin="round" />
+                        <path d="M4 6H20M4 12H20M4 18H20"
+                            stroke="<?php echo (strpos($current_page, '/blog/post') !== false) ? 'black' : 'white'; ?>"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg width="" height="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                         class="close-icon absolute inset-0 m-auto opacity-0">
@@ -37,23 +43,24 @@
             <div
                 class="md:grid md:grid-cols-2 md:grid-rows-2 md:gap-12 gap-y-10 flex flex-col justify-evenly menu-items-container">
                 <div class="flex items-center menu-item">
-                    <a href="/work"
-                        class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">Our
-                        Work</a>
+                    <a href="/index#Par-Mums"
+                        class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">Par
+                        Mums</a>
                 </div>
                 <div class="flex items-center menu-item">
-                    <a href="/about"
-                        class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">About
-                        Us</a>
+                    <a href="/index#BUJ"
+                        class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">BUJ?
+                    </a>
                 </div>
                 <div class="flex items-center menu-item">
-                    <a href="/process"
-                        class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">Our
-                        Process</a>
+                    <a href="/blog/list"
+                        class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">
+                        Blogs</a>
                 </div>
-                <div class="flex items-center menu-item ">
-                    <a href="/blog"
-                        class="text-4xl md:text-5xl md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">Blog</a>
+                <div class="flex items-center menu-item">
+                    <a href="/index#Saznies-ar-mums"
+                        class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">
+                        Kontakti</a>
                 </div>
             </div>
         </div>
