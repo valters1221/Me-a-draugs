@@ -33,7 +33,7 @@
                     suscipit massa. Nam in velit molestie turpis a pharetra mattis. Suspendisse bibendum lobortis.
                 </p>
                 <div class="flex items-center gap-4">
-                    <a href="#"
+                    <a href="/<?php echo $lang->getCurrentLang(); ?>/index#Saznies-ar-mums"
                         class="bg-green-dark font-semibold text-lg text-zinc-100 px-6 py-3 rounded-xl hover:shadow-md hover:shadow-green-li transition-all duration-100 animate blur-in fast-[0.2] delays-[0.45] group-trigger">Sazinies
                         ar mums</a>
                     <button class="bg-zinc-200 p-2 rounded-xl animate blur-in fast-[0.2] delays-[0.5] group-trigger">
@@ -63,8 +63,6 @@
                     <div class="md:w-1/2 flex justify-center items-center">
                         <img src="/images/logo.png" alt="logo meža draugs"
                             class="w-[320px] h-[320px] sm:w-[500px] sm:h-[500px]  relative ">
-
-                        </>
                     </div>
                 </div>
             </div>

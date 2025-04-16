@@ -43,22 +43,22 @@
             <div
                 class="md:grid md:grid-cols-2 md:grid-rows-2 md:gap-12 gap-y-10 flex flex-col justify-evenly menu-items-container">
                 <div class="flex items-center menu-item">
-                    <a href="/index#Par-Mums"
+                    <a href="/<?php echo $lang->getCurrentLang(); ?>/index#Par-Mums"
                         class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">Par
                         Mums</a>
                 </div>
                 <div class="flex items-center menu-item">
-                    <a href="/index#BUJ"
+                    <a href="/<?php echo $lang->getCurrentLang(); ?>/index#BUJ"
                         class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">BUJ?
                     </a>
                 </div>
                 <div class="flex items-center menu-item">
-                    <a href="/blog/list"
+                    <a href="/<?php echo $lang->getCurrentLang(); ?>/blog/list"
                         class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">
                         Blogs</a>
                 </div>
                 <div class="flex items-center menu-item">
-                    <a href="/index#Saznies-ar-mums"
+                    <a href="/<?php echo $lang->getCurrentLang(); ?>/index#Saznies-ar-mums"
                         class="text-4xl md:text-5xl  md:pl-16 pl-8 font-bold hover:text-green-li  transition-all duration-300">
                         Kontakti</a>
                 </div>

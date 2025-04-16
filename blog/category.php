@@ -149,7 +149,7 @@ $total_pages = ceil($total_posts / $posts_per_page);
 
         <!-- Back Link -->
         <div class="text-center mt-8">
-            <a href="/blog/list"
+            <a href="/<?php echo $lang->getCurrentLang(); ?>/blog/list"
                 class="inline-block bg-green-li text-green-dark px-6 py-2 rounded-full hover:text-zinc-100 text-sm hover:bg-zinc-700 transition-colors">
                 ← Atpakaļ
             </a>

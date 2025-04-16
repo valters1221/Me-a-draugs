@@ -1,5 +1,6 @@
 <?php
 require_once '../admin/includes/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/lang/handling.php';
 
 // Get user's browser language (default to 'en')
 $user_language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
@@ -237,7 +238,7 @@ $related_posts = $related_stmt->get_result();
 
             <!-- Navigation -->
             <div class="border-t pt-8 mt-8">
-                <a href="/blog/list"
+                <a href="/<?php echo $lang->getCurrentLang(); ?>/blog/list"
                     class="inline-block bg-green-li text-green-dark px-6 py-2 rounded-full hover:text-zinc-100 text-sm hover:bg-zinc-700 transition-colors">
                     ← Atpakaļ
                 </a>
